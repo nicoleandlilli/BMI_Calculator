@@ -19,6 +19,7 @@ class _InputPageState extends State<InputPage> {
   int height = 180;
   int weight = 60;
   int age = 20;
+  MaterialColor color = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
@@ -104,8 +105,8 @@ class _InputPageState extends State<InputPage> {
                     ),
                     SliderTheme(
                         data: SliderTheme.of(context).copyWith(
-                          activeTickMarkColor: Colors.white,
-                          inactiveTickMarkColor: Color(0xFF8D8E98),
+                          activeTrackColor: Colors.white,
+                          inactiveTrackColor: Color(0xFF8D8E98),
                           thumbColor: Color(0xFFEB1555),
                           overlayColor: Color(0x29EB1555),
                           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
@@ -114,8 +115,11 @@ class _InputPageState extends State<InputPage> {
                         child: Slider(value: height.toDouble(),
                             min: 120.0,
                             max: 220.0,
+                            // activeColor: Colors.yellow,
+                            // inactiveColor: Colors.blue,
                             onChanged: (double newValue){
                               setState(() {
+                                color = Colors.yellow;
                                 height = newValue.round();
                               });
                             }
@@ -158,15 +162,15 @@ class _InputPageState extends State<InputPage> {
                                 },
                               ),
                             SizedBox(width: 10.0,),
-                            FloatingActionButton(onPressed: null,
-                              backgroundColor: Color(0xFF4C4F5E),
-                              child: Icon(Icons.add,color: Colors.white,),),
-                              // RoundIconButton(icon: FontAwesomeIcons.plus,
-                              // onPressed: (){
-                              //   setState(() {
-                              //     weight++;
-                              //   });
-                              // },),
+                            // FloatingActionButton(onPressed: null,
+                            //   backgroundColor: Color(0xFF4C4F5E),
+                            //   child: Icon(Icons.add,color: Colors.white,),),
+                              RoundIconButton(icon: FontAwesomeIcons.plus,
+                              onPressed: (){
+                                setState(() {
+                                  weight++;
+                                });
+                              },),
                           ],)
                         ],
                       ),

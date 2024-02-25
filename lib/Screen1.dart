@@ -24,7 +24,7 @@ class Screen1 extends StatelessWidget {
           //   return Screen2();
           // }));
 
-          Navigator.pop(context);
+          Navigator.pushNamed(context, '/second');
         },
       ),
     );

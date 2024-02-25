@@ -18,9 +18,10 @@ class Screen2 extends StatelessWidget {
           ),
         ),
         onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context){
-            return Screen1();
-          }));
+          // Navigator.push(context, MaterialPageRoute(builder: (context){
+          //   return Screen1();
+          // }));
+          Navigator.pushNamed(context, '/first');
         },
       ),
     );

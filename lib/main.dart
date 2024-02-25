@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/Screen2.dart';
 import 'Screen1.dart';
 import 'input_page.dart';
 
@@ -19,7 +20,13 @@ class BMICalculator extends StatelessWidget{
           ),
       ),
       // home: InputPage(),
-      home: Screen1(),
+      // home: Screen1(),
+      initialRoute: '/first',
+      routes: {
+        // '/': (context) => InputPage(),
+        '/first': (context) => Screen1(),
+        '/second': (context) => Screen2(),
+      },
     );
   }
 }

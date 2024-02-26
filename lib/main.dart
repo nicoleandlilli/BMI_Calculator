@@ -19,9 +19,10 @@ class BMICalculator extends StatelessWidget{
             foregroundColor: Colors.white,
           ),
       ),
-      // home: InputPage(),
+      home: InputPage(),
       // home: Screen1(),
-      initialRoute: '/first',
+
+      // initialRoute: '/first',
       routes: {
         // '/': (context) => InputPage(),
         '/first': (context) => Screen1(),

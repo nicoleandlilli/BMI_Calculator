@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/results_page.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
@@ -34,7 +35,7 @@ class _InputPageState extends State<InputPage> {
                   color: Color(0xFFFFFFFF),
                 ),
               ),
-            )),
+    ),),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -79,7 +80,6 @@ class _InputPageState extends State<InputPage> {
               child: ReusableCard(
                 onPress: () {
                   setState(() {
-                    selectedGender = Gender.male;
                   });
                 },
                 color: kActiveCardColor,
@@ -210,12 +210,19 @@ class _InputPageState extends State<InputPage> {
                 ),
               ],
             )),
-            Container(
-              color: kBottomContainerColor,
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-            )
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultsPage()));
+              },
+              child: Container(
+                child: Center(child: Text('CALCULATE',style: kLargeButtonTextStyle,),),
+                color: kBottomContainerColor,
+                margin: EdgeInsets.only(top: 10.0),
+                // padding: EdgeInsets.only(bottom: 20.0),
+                width: double.infinity,
+                height: kBottomContainerHeight,
+              ),
+            ),
           ],
         ));
   }
